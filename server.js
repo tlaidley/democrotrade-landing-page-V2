@@ -22,6 +22,7 @@ const subscriberRouter = require('./routes/subscribers')
 app.use('/subscribers', subscriberRouter)
 
 app.get("/", function (req, res, next) {
+    console.log('root')
     res.set({
         "Allow-access-Allow-Origin": '*'
     })
@@ -30,6 +31,7 @@ app.get("/", function (req, res, next) {
 
 app.use((req, res, next) => {
     res.status(404).send('Sry Page not found')
+    next()
 })
 
 app.listen(3000, () => console.log('Server has started'))
