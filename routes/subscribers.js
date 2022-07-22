@@ -3,10 +3,11 @@ const router = express.Router()
 const Subscriber = require('../modules/subscriber')
 
 //Getting all
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         const subscribers = await Subscriber.find()
-        res.json(subscribers)
+        res.status(200).json(subscribers)
+        next()
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
@@ -26,8 +27,9 @@ router.post('/', async (req, res) => {
     }
 })
 //Get one
-router.get('/:id', getSubscriber, (req, res) => {
+router.get('/:id', getSubscriber, (req, res, next) => {
     res.json(res.subscriber.name)
+    next()
 })
 
 //Deleteing one

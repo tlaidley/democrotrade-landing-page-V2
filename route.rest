@@ -1,7 +1,10 @@
 GET http://localhost:3000/subscribers
 
 ###
-GET http://localhost:3000/subscribers/62cf0bdf72a66daab88e1790
+GET https://www.democratrade.com/subscribers
+
+###
+GET http://localhost:3000/subscribers/62da1fe356961f832875bc3f
 
 ###
 

@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const subscriberRouter = require('./routes/subscribers')
 app.use('/subscribers', subscriberRouter)
 
-app.get("/", function (req, res) {
+app.get("/", function (req, res, next) {
     res.set({
         "Allow-access-Allow-Origin": '*'
     })
