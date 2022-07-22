@@ -13,11 +13,13 @@ $(document).ready(function () {
                 $('#waitListForm').trigger("reset");
                 $("#JoinForm").hide();
                 $("#JoinResults").show();
+                console.log('success');
             }
         })
     })
     $('#ModalSubscription').on('hidden.bs.modal', function () {
-        $("#JoinForm").show();
         $("#JoinResults").hide();
+        $("#JoinFormHeader").html(`Join Waitlist`);
+        $("#JoinForm").show();
     })
 })
