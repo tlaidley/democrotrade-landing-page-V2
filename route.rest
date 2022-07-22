@@ -1,0 +1,17 @@
+GET http://localhost:3000/subscribers
+
+###
+GET http://localhost:3000/subscribers/62cf0bdf72a66daab88e1790
+
+###
+
+DELETE  http://localhost:3000/subscribers/62ced319086ccb395ab5402d
+
+###
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "name": "Tajh",
+    "email": "Tajh@email.com"
+}
