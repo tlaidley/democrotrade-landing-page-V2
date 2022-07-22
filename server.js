@@ -20,16 +20,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 const subscriberRouter = require('./routes/subscribers')
 const testRoute = require('./routes/test')
-app.use('/subscribers', subscriberRouter)
 
 app.get("/", function (req, res, next) {
-    console.log('root')
+    console.log('Hello from / root')
     res.set({
         "Allow-access-Allow-Origin": '*'
     })
     res.sendFile(__dirname + "index.html")
 })
 
+app.use('/subscribers', subscriberRouter)
 app.use('/test', testRoute)
 
 app.use((req, res, next) => {

@@ -4,9 +4,6 @@ const Subscriber = require('../modules/subscriber')
 
 //Getting all
 router.get('/', async (req, res) => {
-    res.set({
-        "Allow-access-Allow-Origin": '*'
-    })
     try {
         const subscribers = await Subscriber.find()
         res.status(200).json(subscribers)
