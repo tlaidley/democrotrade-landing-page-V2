@@ -19,6 +19,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 const subscriberRouter = require('./routes/subscribers')
+const testRoute = require('./routes/test')
 app.use('/subscribers', subscriberRouter)
 
 app.get("/", function (req, res, next) {
@@ -28,6 +29,8 @@ app.get("/", function (req, res, next) {
     })
     res.sendFile(__dirname + "index.html")
 })
+
+app.use('/test', testRoute)
 
 app.use((req, res, next) => {
     res.status(404).send('Sry Page not found')
