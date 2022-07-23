@@ -23,10 +23,10 @@ const testRoute = require('./routes/test')
 
 app.get("/", function (req, res, next) {
     console.log('Hello from / root')
-    res.set({
-        "Allow-access-Allow-Origin": '*'
-    })
-    res.sendFile(__dirname + "index.html")
+    // res.set({
+    //     "Allow-access-Allow-Origin": '*'
+    // })
+    // res.sendFile(__dirname + "index.html")
 })
 
 app.use('/subscribers', subscriberRouter)
