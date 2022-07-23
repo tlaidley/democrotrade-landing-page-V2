@@ -29,7 +29,8 @@ app.get("/", function (req, res, next) {
     res.sendFile(__dirname + "index.html")
 })
 
-app.use('/subscribers', subscriberRouter)
+app.use('/api/subscribers', subscriberRouter)
+
 app.use('/test', testRoute)
 
 app.use((req, res, next) => {
